@@ -1,0 +1,22 @@
+- name: Setup inicial Debian 
+  hosts: localhost
+  connection: local 
+  become: yes
+  tasks:
+
+    - name: Istalando aplicaçoes
+      apt: 
+        name: "{{ item }}"
+        install_recommends: yes
+        state: present
+      loop:
+        - git 
+        - vim 
+        - flameshot
+        - htop 
+
+
+  
+  
+  
+
