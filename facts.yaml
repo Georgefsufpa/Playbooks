@@ -1,0 +1,6 @@
+---
+- name: Vendo os facts com playbooks
+  hosts: localhost
+  tasks:
+  - debug:
+      var: ansible_facts
