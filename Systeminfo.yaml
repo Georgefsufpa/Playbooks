@@ -1,0 +1,17 @@
+---
+
+- name: Especificações do sistema
+  hosts: localhost
+  connection: local
+  become: yes
+  tasks:
+    - name: conseguindo specs da maquina
+      debug:
+        msg: >
+          O ip da maquina eh "{{ ansible_default_ipv4 }}",
+          o mac eh {{ ansible_enp7s0.macaddress }},
+          a distro do sistema eh a {{ ansible_lsb.description }},
+          o shell padrao eh {{ ansible_env.SHELL }},
+          o processador eh {{ ansible_processor[2] }},
+          a mobo do sistema {{ ansible_product_name }},
+          a memoria total eh de {{ ansible_memtotal_mb }}          
